@@ -17,4 +17,8 @@ export default defineConfig({
             },
         }),
     ],
+    server: {
+        host: '192.168.1.64',
+        port: '5173'
+    }
 });

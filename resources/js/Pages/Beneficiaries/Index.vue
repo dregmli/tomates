@@ -31,37 +31,46 @@ defineProps({
                             ecosystem to be a breath of fresh air. We hope you love it.
                         </p>
 
+                        <br>
+                        <br>
 
-                        <div class="">
-                            <Link href="/beneficiaries/create" class="block bg-green-800 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2 mb-1"> Añadir Beneficiario </Link>
+                        <div class="flex place-content-center">
+                            <div class="">
+                                <Link href="/beneficiaries/create" class="inline-block bg-green-800 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2 mb-1">
+                                    + Añadir Beneficiario
+                                </Link>
+                            </div>
                         </div>
-                        <table class="">
-                                    <thead >
-                                        <tr class="mt-1 text-base text-gray-900 dark:text-white">
-                                            <th class="w-1/12 px-4 py-2">Id</th>
-                                            <th class="w-1/4 px-4 py-2">Nombre</th>
-                                            <th class="w-1/4 px-4 py-2">Correo</th>
-                                            <th class="w-1/6 px-4 py-2">Creación</th>
-                                            <th class="w-1/6 px-4 py-2">Acciones</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody class="mt-6 text-gray-500 dark:text-gray-400 leading-relaxed">
-                                        <tr v-for="user in users" :key="user.id">
-                                            <td class="border px-4 py-2">{{ user.id }}</td>
-                                            <td class="border px-4 py-2">{{ user.name }}</td>
-                                            <td class="border px-4 py-2">{{ user.email }}</td>
-                                            <td class="border px-4 py-2">{{ user.created_at }}</td>
-                                            <td class="md:flex md:items-center border px-4 py-2">
-                                                <div class="">
-                                                    <Link :href="'/beneficiaries/'+user.id+'/edit'" class="block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2 mb-1">Editar</Link>
-                                                </div>
-                                                <div class="">
-                                                    <Link :href="'/beneficiaries/'+user.id+'/delete'" class="block bg-red-500 hover:red-blue-700 text-white font-bold py-2 px-4 rounded">Eliminar</Link>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                        <br/>
+                        <div class="">
+                            <table class="">
+                                <thead >
+                                    <tr class="mt-1 text-base text-gray-900 dark:text-white">
+                                        <th class="w-1/12 px-4 py-2 hidden sm:table-cell">Id</th>
+                                        <th class="w-1/4 px-4 py-2">Nombre</th>
+                                        <th class="w-1/4 px-4 py-2">Correo</th>
+                                        <th class="w-1/6 px-4 py-2 hidden sm:table-cell">Creación</th>
+                                        <th class="w-1/6 px-4 py-2">Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="mt-6 text-gray-900 dark:text-gray-300 leading-relaxed">
+                                    <tr v-for="user in users" :key="user.id">
+                                        <td class="border dark:border-gray-500 whitespace-normal break-all px-4 py-2 hidden sm:table-cell">{{ user.id }}</td>
+                                        <td class="border dark:border-gray-500 whitespace-normal break-all px-4 py-2">{{ user.name }}</td>
+                                        <td class="border dark:border-gray-500 whitespace-normal break-all px-4 py-2">{{ user.email }}</td>
+                                        <td class="border dark:border-gray-500 whitespace-normal break-all px-4 py-2 hidden sm:table-cell">{{ user.created_at }}</td>
+                                        <td class="border dark:border-gray-500 md:flex md:items-center px-4 py-2">
+                                            <div class="">
+                                                <Link :href="'/beneficiaries/'+user.id+'/edit'" class="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold px-2 py-2 rounded mr-2 mb-1">Editar</Link>
+                                            </div>
+                                            <div class="">
+                                                <Link :href="'/beneficiaries/'+user.id+'/delete'" class="inline-block bg-red-500 hover:red-blue-700 text-white font-bold px-2 py-2 rounded">Eliminar</Link>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
 
 
                     </div>
